@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let exp = /^h/;
+        //document.write(exp.test("shen")); // false ^finds a string that starts with h
+
+        //let exp = /n$/;
+        //document.write(exp.test("Sachin")); // ture; $ finds a string that ends with n
+
+        //let exp = /^Sn$/; // only sn should exists in the given String
+        //document.write(exp.test("Sn"));
+
+        //let exp = /s...k/; // . represents a single character in string 
+        // document.write(exp.test("sk.fk")); 
+
+        //let exp = /s|n/; // finds character that contains in the string
+        //document.write(exp.test("achils"));
+
+        // let exp = /^A.{3}|k.h$/
+        // document.write(exp.test("Ajj"));
+        
+        let exp = /^[6789][0-9]{9}$/
+        document.write(exp.test('7894561283'));
+
+    </script>
+</body>
+</html>

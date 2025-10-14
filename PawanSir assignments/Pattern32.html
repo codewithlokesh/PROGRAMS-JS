@@ -1,0 +1,30 @@
+<pre>
+<script>
+    let n = prompt("Enter umner of rows")*1
+    for (i = 1; i <= n; i++) {
+            
+            for (j = 1; j <= n - i; j++) {
+               document.write(" ");
+            }
+            
+            for (j = 1; j <= 2 * i - 1; j++) {
+                document.write("*");
+            }
+            document.write("\n");
+        }
+ 
+        
+        for (i = n-1; i >= 1; i--) {
+            
+            for (j = 1; j <= n - i; j++) {
+                document.write(" ");
+            }
+            
+            for (j = 1; j <= 2 * i - 1; j++) {
+                document.write("*");
+            }
+            document.write("\n");
+        }
+
+</script>
+</pre>

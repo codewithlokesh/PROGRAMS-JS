@@ -1,0 +1,29 @@
+<script>
+    var arr = [8,5,9,4,6,8,3,10];
+    var arr2 = [7,9,5,2,1,7,8,5,10,11,22,33,45]
+    let c = [];
+    document.write("<br> First array : "+arr)
+    document.write("<br> Second array : "+arr2)
+    let i=0, j=0;
+
+    while (i<arr.length || j<arr2.length){
+        if(i<arr.length){
+            c.push(arr[i])
+            i++;
+        }
+        else if(j<arr2.length){
+            c.push(arr2[j])
+            j++;
+        }
+    }
+    for(let i=0; i<c.length; i++){
+        for(let j=0; j<c.length-1; j++){
+            if(c[j]<c[j+1]){
+                let temp = c[j]
+                c[j] = c[j+1]
+                c[j+1] = temp;
+            }
+        }
+    }
+    document.write("<br> third array : "+c)
+</script>

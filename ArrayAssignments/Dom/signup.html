@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="signup">Sign up</button>
+    
+</body>
+    <script>
+        let signup = document.getElementById('signup');
+        signup.addEventListener('click', signUp);
+
+        function signUp(){
+            let center = document.createElement('center')
+            let form = document.createElement("form");
+           
+            
+            let nameError = document.createElement('small');
+            let passworderror = document.createElement('small');
+            nameError.setAttribute('id','nameError');
+            passworderror.setAttribute('id','passwordError')
+
+            let createUser = document.createElement('input');
+            createUser.type = 'text';
+            createUser.setAttribute('id', 'username');
+            
+            createUser.placeholder = "Create UserName";
+
+
+            let createPassword = document.createElement('input')
+            createPassword.style.marginTop = '10px';
+            createPassword.type = 'password';
+            createPassword.setAttribute('id','password');
+            createPassword.placeholder = 'Create password';
+
+            form.setAttribute('id','register');
+            let submit = document.createElement('input');
+            submit.type = 'submit';
+
+            form.appendChild(createUser);
+            form.appendChild(document.createElement('br'));
+            form.appendChild(nameError)
+            form.appendChild(document.createElement('br'));
+            form.appendChild(createPassword);
+            form.appendChild(document.createElement('br')); 
+            form.appendChild(passworderror)
+            form.appendChild(document.createElement('br'));
+            form.appendChild(document.createElement('br'));
+            form.appendChild(submit) ; 
+            center.appendChild(form);
+            document.body.appendChild(center);
+            let submitForm = document.getElementById('register');
+            submitForm.addEventListener('submit',registerUser)
+            document.getElementById('username').addEventListener('keyup',validateUsername)
+            document.getElementById('password').addEventListener('keyup',validatePassword)
+            
+            
+        }
+        let registerUser = function(e){
+                e.preventDefault();
+                let userNameValidate = validateUsername();
+                let passwordValidate = validatePassword();
+                if(userNameValidate && passwordValidate){
+                    signUpUser();
+                }
+                
+        }
+        function validatePassword(){
+            let status = true;
+            let passwordCheck = document.getElementById('password').value;
+            
+            if(passwordCheck ==""){
+                document.querySelector('#passwordError').innerHTML = "Password Field is empty"
+            }
+            else if(passwordCheck.length < 8){
+                document.querySelector('#passwordError').innerHTML = "Password length should be greater than 8"
+            }
+            else{
+                document.querySelector('#passwordError').innerHTML = ""
+            }
+            return status;
+        }
+        function validateUsername(){
+            let status = true;
+            let userName = document.getElementById('username').value;
+             
+            if(userName ==""){
+                document.getElementById('nameError').innerHTML = "Field is empty"
+            }
+            else if(/\d/.test(userName)){
+                document.getElementById('nameError').innerHTML = "name Should not contain letters"
+            }
+            else{
+                document.getElementById('nameError').innerHTML = ""
+            }
+            return status;
+        }
+        function signUpUser(){
+            let userName = document.getElementById('username').value;
+            let password  = document.getElementById('password').value;
+
+            localStorage.setItem('userName',userName);
+            localStorage.setItem('password',password);
+            console.log("Success");
+            
+        }
+    </script>
+</html>

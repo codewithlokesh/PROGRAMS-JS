@@ -1,0 +1,10 @@
+<script>
+     let arr = [5,6,8,4,5,6,3,2,5,6,7,9,0,8,7,6,54,2];
+    document.write("<br> orignal array : "+arr);
+    let n = arr.length;
+        let temp = arr[0]
+            arr[0] = arr[n-1];
+            arr[n-1] = temp
+
+    document.write(`<br>After swapping first and last elements : ${arr}`);
+</script>

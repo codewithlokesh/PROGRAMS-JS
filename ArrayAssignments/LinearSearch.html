@@ -1,0 +1,16 @@
+<script>
+     var arr = [8,5,9,4,6,8,3,10];
+    let n = arr.length
+    document.write("<br> Orignal array : "+arr);
+
+    let num =  prompt("Enter the number you want to search in array")*1
+    let flag = false;
+    for(let i=0; i<n ;i++){
+        if(arr[i]==num){
+            flag =true;
+            break;
+
+        }
+    }
+    flag ? document.write("<br>Number found ") : document.write("<br>Numer not found")
+</script>

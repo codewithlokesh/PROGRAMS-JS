@@ -1,0 +1,18 @@
+<script>
+
+    let arr = [-5, 7, -3, -4, 9, 10, -1, 11 ]
+    document.write("<br> orignal array : "+arr)
+    let n = arr.length;
+    let newArr = [];
+    for(let i=0; i<n; i++){
+        if(arr[i]>=0){
+            newArr.push(arr[i]);
+        }
+    }
+    for(let i=0; i<n; i++){
+        if(arr[i]<0){
+            newArr.push(arr[i]);
+        }
+    }
+    document.write("<br> Sorted array is :"+newArr)
+</script>

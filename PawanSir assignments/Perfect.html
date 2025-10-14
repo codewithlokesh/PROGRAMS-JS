@@ -1,0 +1,16 @@
+<script>
+    var num = parseInt(prompt("Enter Your Number"));
+    var sum = 0;
+
+    for (var i = 1; i < num; i++) {
+        if (num % i === 0) {
+            sum += i;
+        }
+    }
+
+    if (sum === num) {
+        document.write("This number is a Perfect Number");
+    } else {
+        document.write("This number is Not a Perfect Number");
+    }
+</script>

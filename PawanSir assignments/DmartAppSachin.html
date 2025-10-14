@@ -1,0 +1,101 @@
+<style>
+    table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+</style>
+<script>
+    let userName = prompt("Enter your name");
+    let gender = prompt("Enter gender");
+    let price = [10,20,30,40,50,60,70,80,90,100];
+    let totalPriceOfItem = [];
+    let totalBillAmount=0,billAfterDis=0, priceAfterGST = 0;
+    let actualPrice=0;
+    let carryBag=0;
+    let quantity = [];
+
+
+    for(let i=0; i<price.length; i++){
+        let q = prompt("Enter quantity of Item-"+(i+1)+ " = price of product is :"+price[i])*1
+        quantity.push(q)
+        if(i==0 && quantity>4){
+            totalPriceOfItem.push((price[i]*q)-(price[i]*q*5)/100);
+        }
+        else if(i==4){
+            totalPriceOfItem.push((price[i]*q)-(price[i]*q*10)/100);
+        }
+        else if(i==9){
+            totalPriceOfItem.push((price[i]*q)-(price[i]*q*15)/100);
+        }
+        else{
+            totalPriceOfItem.push(price[i]*q);
+        }
+    }
+    
+    
+    for(let i = 0; i<totalPriceOfItem.length; i++){
+        
+        totalBillAmount += totalPriceOfItem[i];
+    }
+    
+    if(totalBillAmount>10000){
+        billAfterDis = (totalBillAmount)-(totalBillAmount*15)/100
+    }
+    else if(totalBillAmount>5000 && totalBillAmount<10000){
+        billAfterDis = (totalBillAmount)-(totalBillAmount*10)/100
+    }
+    else{
+        billAfterDis = totalBillAmount;
+    }
+
+    priceAfterGST = (billAfterDis)+(billAfterDis*10)/100;
+    
+    let askCarryBag = confirm("Do you want a carry Bag");
+    if(askCarryBag){
+        carryBag=10;
+        billAfterDis+10;
+    }
+document.write("<center>")
+    document.write("<pre>")
+            document.write("<h2>D-mart</h2>");
+            document.write(`<strong>Name : <strong>${userName}                                  <strong>Date : </strong>${new Date().toLocaleDateString()}`);
+            document.write("<br>-----------------------------------------------------------------");
+            document.write("<table  cellspacing='0' cellpadding='10'>");
+                document.write("<tr>");
+                        document.write("<td>Item-Name</td><td>Quantity</td><td>Price</td><td>Total</td><td>After-discount</td>");
+                document.write("</tr>");
+                    for(let i=0; i<price.length; i++){
+                        actualPrice = actualPrice +(price[i]*quantity[i]);
+                        
+                        document.write("<tr>");
+                            document.write(`<td>Item-${i+1}</td><td>${quantity[i]}</td><td>${price[i]}</td><td>${(price[i]*quantity[i])}</td><td>${totalPriceOfItem[i]} Rs</td>`);
+                        document.write("</tr>")
+                    }
+            document.write("</table>");
+            document.write("<br>-----------------------------------------------------------------");
+            document.write("<table  cellspacing='0' cellpadding='10'>");
+                document.write(`<tr><td colspan='3'></td><td>A.P</td><td>D.P</td><tr>`);
+                    document.write(`<tr><td colspan='3'></td><td>${actualPrice.toFixed(2)}</td><td>${billAfterDis.toFixed(2)}</td><tr>`);
+                    document.write(`<tr><td colspan='3'>Gift : ${gender=="male" ? 'Ladger Wallet' :'Cadeberry'}</td><td>0</td><td>0</td><tr>`);
+                    document.write(`<tr><td colspan='3'>CarryBag : ${askCarryBag ? 'Yes' : 'No'}</td><td>${askCarryBag ? '10' : '0'}</td><td>0</td><tr>`);
+                    document.write(`<tr><td colspan='3'>GST(10%) :</td><td>${(billAfterDis*10)/100}</td><td>${(billAfterDis*10)/100}</td><tr>`);
+                   
+            document.write(`</table><br>`);
+                document.write("<br>-----------------------------------------------------------------");
+                document.write("<table  cellspacing='0' cellpadding='10'>");
+                    document.write(`<tr><td colspan='3'>Total :</td><td>${(actualPrice+carryBag+((billAfterDis*10)/100)).toFixed(2)}</td><td>${(billAfterDis+carryBag+((billAfterDis*10)/100)).toFixed(2)}</td><tr>`);
+                document.write(`</table><br>`);
+                document.write("Thank you<br> ");
+                document.write("For Visit<br> ");
+                document.write("D-Mart<br> ");
+                document.write("<br>-----------------------------------------------------------------");
+    document.write("</pre>")
+document.write("</center>")
+</script>

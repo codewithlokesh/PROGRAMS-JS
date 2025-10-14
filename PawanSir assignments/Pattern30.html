@@ -1,0 +1,17 @@
+<pre>
+    <script>
+    
+        let raw = prompt("Enter the number of raw");
+        for (let i = raw; i >= 1; i--) {
+            let alpha = 65;
+            for (let j = raw; j >  i; j--) {
+                document.write(" ");
+            }
+            for(let k=1; k<=i; k++){
+                document.write(String.fromCharCode(alpha)+" ")
+                alpha++;
+            }
+            document.write("<br>")
+        }
+    </script>
+    </pre>

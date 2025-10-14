@@ -1,0 +1,17 @@
+<pre>
+<script>
+    let n = prompt("Enter number of rows")*1;
+    for(let i=1;i<=n;i++){
+            for(let j=1;j<=i;j++){
+                document.write(j+" ");
+            }
+            for(let j=1;j<=2*n-2*i;j++){
+                document.write("  ");
+                }
+            for(let j=i;j>=1;j--){
+                document.write(j+" ");
+            }
+            document.write("<br>");
+        }
+</script>
+</pre>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img style="filter: brightness(30%);" src="room.jpg" alt="">
+    <button >On</button>
+</body>
+    <script>
+        let image = document.querySelector('img');
+        let button  = document.querySelector('button');
+        let status = 0;
+        button.addEventListener('click',function(){
+            if(!status){
+                image.setAttribute('style','filter : brightness(1.2)');
+                button.innerHTML = "Off";
+                status = 1;
+            }
+            else{
+                console.log(status)
+                image.setAttribute('style','filter : brightness(30%)')
+                button.innerHTML = "On";
+                status = 0;
+            }
+        })
+    </script>
+</html>

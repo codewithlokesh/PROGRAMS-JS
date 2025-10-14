@@ -1,0 +1,25 @@
+<script>
+    const numericGrade = parseInt(prompt("Enter a numeric grade (0-100):"));
+
+let letterGrade;
+switch (true) {
+  case numericGrade >= 90:
+    letterGrade = "A";
+    break;
+  case numericGrade >= 80:
+    letterGrade = "B";
+    break;
+  case numericGrade >= 70:
+    letterGrade = "C";
+    break;
+  case numericGrade >= 60:
+    letterGrade = "D";
+    break;
+  default:
+    letterGrade = "F";
+}
+
+document.write("Grade : "+letterGrade);
+
+</script>
+<!-- Sachin bethade -->

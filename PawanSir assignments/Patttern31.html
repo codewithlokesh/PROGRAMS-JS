@@ -1,0 +1,15 @@
+
+    <script>
+        let n = prompt("Enter rows")*1
+        for(let i=1; i<=n;i++){
+            for(let j=1; j<=n; j++){
+                if(i>=j&&i<=(n/2) || j==1 || j==n || i+j == n+1 || i>=(n/2) && i<=j || i>=(n/2) && i>=(n-i) ){
+                    document.write("*");
+                }
+                else{
+                    document.write("&nbsp;&nbsp;")
+                }
+        }
+        document.write("<br>");
+    }
+    </script>

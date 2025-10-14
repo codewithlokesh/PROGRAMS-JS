@@ -1,0 +1,38 @@
+<pre>
+<script>
+    var flag=true;
+    var obj1={
+        name:"Sachin",
+        age:21,
+        email:"sb360879@gmail.com"
+    };
+    var obj2={
+        name:"Sachin",
+        age:21,
+        email:"sb360879@gmail.com",
+       
+    };
+    document.write(`<br> First object  ${obj1.name}  ${obj1.age}   ${obj1.email}`);
+    document.write(`<br> Second object ${obj2.name}  ${obj2.age}   ${obj2.email}`);
+    
+    if(Object.keys(obj1).length==Object.keys(obj2).length){
+            for(let e in obj1){
+                if(obj1[e]!==obj2[e]){
+                    flag=false;
+                    break;
+                }
+            }
+    }
+    else{
+        document.write("<br>Object are notsame");
+    }
+    
+    
+    if(flag){
+        document.write( `<br> Objects are equal`)
+    }
+    else{
+        document.write( `<br>  Objects not are equal`)
+    }
+</script>
+</pre>

@@ -1,0 +1,12 @@
+<script>
+    let arr = [5,6,8,4,5,6,3,2,5,6,7,9,0,8,7,6,54,2];
+    document.write("<br> orignal array length : "+arr);
+    let n = arr.length;
+
+    let last = arr[n-1];
+    for(let i=n-1; i>=1; i--){
+        arr[i] = arr[i-1]
+    }
+    arr[0]=last;
+    document.write("<br> array after rotation : "+arr);
+</script>

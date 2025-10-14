@@ -1,0 +1,11 @@
+<script>
+    let arr = [15, 25, 36, true, 'javaScript', false, 58, 25.3]
+    let n = arr.length;
+    let count  = 0;
+    for(let i=0; i<n; i++){
+        if(typeof arr[i] =="number"){
+            count++;
+        }
+    }
+    document.write("<br> total number of integer in array is : "+count)
+</script>

@@ -1,0 +1,18 @@
+<script>
+    var num=parseInt(prompt("Enter Your Number"));
+    var sum=0;
+    var temp=num;
+    while(temp>0){
+        var rem=temp%10;
+        sum+= rem * rem * rem;
+        temp = parseInt(temp/10);
+
+    }
+    if(sum==num){
+        document.write("This number is Armstrong");
+
+    }
+    else{
+        document.write("This number is  Not Armstrong");
+    }
+</script>

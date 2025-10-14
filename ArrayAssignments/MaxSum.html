@@ -1,0 +1,29 @@
+<script>
+    let a =[8,3,1,2];
+    let result = 0;
+    let n = a.length
+    
+    for(let i=1; i<=n; i++){
+        let arr = rotate(a);
+        let sum = 0;
+        for(let j=0; j<n; j++){
+            
+            sum = sum+(arr[j]*j);
+            if(sum>result){
+                result = sum;
+            }
+        }
+    }
+    document.write("<br> Maximum addtion possible : "+result);
+
+    function rotate(arr){
+        let first = arr[0];
+   
+        for(let i=1; i<n; i++){
+            arr[i-1] = arr[i]
+        }
+        arr[n-1] = first
+        return arr
+    }
+    
+</script>

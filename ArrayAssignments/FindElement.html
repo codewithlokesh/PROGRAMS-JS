@@ -1,0 +1,18 @@
+<script>
+        let arr = [145, 874, 698, 254, 321, 956]
+        let n = arr.length;
+        document.write(`<br> Orignal  array is ${arr}`);
+        let num = prompt("Enter ther number to find in array")*1;
+        let result = false
+        for(let i=0; i<n; i++){
+            if(num==arr[i]){
+                result = true
+                break;
+            }
+        }
+        if(result){
+            document.write(`<br>element found`);
+        }
+        else
+            document.write("<br> not found");
+</script>

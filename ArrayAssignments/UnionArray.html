@@ -1,0 +1,26 @@
+<script>
+    let a = [1,2,3,4,5]
+    let b = [1,2,3]
+    let n = a.length
+    let m = b.length
+    let newArray=[];
+    let i=0, j=0;
+    document.write("<br> first array : "+a)
+    document.write("<br> Second array : ",b)
+    while(i<n && j<m ){
+        if(!newArray.includes(a[i])){
+            newArray.push(a[i]);
+            i++;
+        }
+        else if(!newArray.includes(b[j])){
+            newArray.push(b[j]);
+            j++;
+        }
+            else{
+                if (i < n) i++;
+                if (j < m) j++;
+            }
+    }
+    document.write("<br> union of Arrays : "+ newArray)
+    document.write("<br> new Array length  : ",newArray.length)
+</script>

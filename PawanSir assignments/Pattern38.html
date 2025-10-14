@@ -1,0 +1,10 @@
+<script>
+    let n = prompt("Enter number of rows");
+    for(let i=1; i<=n; i++){
+            let str = '65';
+            for(let j=n; j>=i; j--){
+                document.write(String.fromCharCode(str++)+"&nbsp;");
+            }
+            document.write("<br>");
+        }
+</script>

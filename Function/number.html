@@ -1,0 +1,29 @@
+<script>
+    for(let i=0; i<5498518; i++){
+        if(check(i)){
+            document.write("<br> number is :  "+i);
+        }
+    }
+    function check(num){
+        let n = num;
+        let sum = 0;
+        let s = num.toString();
+
+        for(let i=0; i<s.length; i++){
+            
+            let pow = 1;
+            for(let j=i; j>=0; j--){
+                pow = pow*s[i]
+            }
+            
+            sum = sum+pow;
+        }
+        if(n==sum){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
+</script>

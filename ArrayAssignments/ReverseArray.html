@@ -1,0 +1,12 @@
+<script>
+    let arr = [5,6,8,4,5,6,3,2,5,6,7,9,0,8,7,6,54,2];
+    document.write("<br> orignal array : "+arr);
+    let n = arr.length;
+    for (let i=0; i<n/2; i++){
+        let temp = arr[i];
+        arr[i] = arr[n-(i+1)];
+        arr[n-(i+1)] = temp;
+    }
+   
+    document.write("<br> Reverse Array : "+arr);
+</script>

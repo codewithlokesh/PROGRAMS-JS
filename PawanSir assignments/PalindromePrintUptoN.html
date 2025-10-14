@@ -1,0 +1,23 @@
+<script>
+    var n = parseInt(prompt("Enter Your Number"));
+    for (var i = 1; i <= n; i++) {
+            if (isPalindrome(i)) {
+                document.write(i + "<br>");
+            }
+        }
+
+
+    function isPalindrome(num){
+        var real = num;
+        var rev = 0;
+
+        while (num > 0) {
+            var digit = num % 10;
+            rev = rev * 10 + digit;
+            num = parseInt(num / 10);
+        }
+
+       return rev === real
+            
+    }
+</script>

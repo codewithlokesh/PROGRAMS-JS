@@ -1,0 +1,28 @@
+<script>
+     let arr = [5,6,8,4,5,6,3,2,5,6,7,9,0,8,7,6,54,2];
+    document.write("<br> orignal array : "+arr);
+    let n = arr.length;
+    
+    let num = prompt("Enter the number which is present in the array")*1
+    let index = 0;
+    for(let i=0; i<n; i++){
+        for(let j=i+1; j<n; j++){
+            if(arr[i]>arr[j]){
+                let temp  = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            else if(arr[i] == arr[j]){
+                arr.splice(j,1);
+            }
+            else if(num==arr[i]){
+                index = i;
+            }
+        }
+    }
+    
+    let lesser = arr[index-1];
+    let greater = arr[index+1];
+    document.write("<br> lesser element : "+lesser)
+    document.write("<br> greater element : "+greater);
+</script>

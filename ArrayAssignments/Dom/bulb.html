@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #brightness{
+            width: 500px;
+            height: 500px;
+            background-image: radial-gradient(yellow, goldenrod, white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body >
+    
+        <div>
+            <img src="bulb.png" alt="" width="30%">
+        </div>
+
+    
+</body>
+<script>
+            let status = 0;
+            let bulb = document.querySelector('img');
+            bulb.addEventListener('click', function(){
+                let brightness = document.querySelector('div');
+                if(!status){
+                    brightness.setAttribute('id', 'brightness');
+                    status = 1;
+                }
+                else{
+                    brightness.removeAttribute('id');
+                    status=0;
+                }
+
+            })
+</script>
+</html>

@@ -1,0 +1,13 @@
+<script>
+    let arr  = [1,2,3,-2,5]
+    document.write("<br> Array : ",arr)
+    let n = arr.length
+    let max = arr[0];
+    let previousMax= arr[0];
+
+    for (let i = 1; i < n; i++) {
+        max = Math.max(arr[i], max + arr[i]);
+        previousMax = Math.max(previousMax, max);
+    }
+    document.write("<br> Maximum sub array : ",previousMax);
+</script>

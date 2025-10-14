@@ -1,0 +1,16 @@
+<script>
+    function armStrong(num, callback){
+        document.write("<br> number is : "+num)
+        let sum = 0;
+        let n = num;
+        while(num>0){
+            let rem = num%10;
+            sum = sum+(rem*rem*rem)
+            num = parseInt(num/10);
+        }
+        callback(n,sum);
+    }
+    armStrong(407,function(x,y){
+        x==y ? document.write("<br> <h1> number is Armstrong</h1> ") :document.write("<br> <h1>number is not armstrong</h1>");
+    })
+</script>

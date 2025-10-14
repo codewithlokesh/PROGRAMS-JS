@@ -1,0 +1,14 @@
+<script>
+    let n = prompt("Enter the number of houses");
+    let k = prompt("Enter the amount to collect");
+
+    maximizeMoney(n,k);
+    function maximizeMoney(N,K){
+        //code here
+        let sum =0;
+        for(let i=1; i<=N; i+=2){
+            sum = sum+K;
+        }
+        document.write(sum);
+    }
+</script>

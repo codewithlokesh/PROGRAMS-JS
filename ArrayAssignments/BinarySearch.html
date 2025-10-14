@@ -1,0 +1,29 @@
+<script>
+    var arr = [8,5,9,4,6,8,3,10];
+    let n = arr.length
+    document.write("<br> Orignal array : "+arr);
+
+    let num = prompt("Enter the number you want to search in array")*1
+    let low =0
+    let high = n-1
+    let i=0;
+    arr.sort(function (a,b){
+        return a-b
+    })
+    document.write("<br> Sorted  array : "+arr);
+    while(low<=high){
+        let mid = parseInt((low+high)/2);
+
+        if(arr[mid]==num){
+            document.write("<br> Index : ",mid)
+            break;
+        }
+        else if(arr[mid]< num){
+            low = mid+1
+        }
+        else{
+            high = mid-1
+        }
+      
+    }
+</script>

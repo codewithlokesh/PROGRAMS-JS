@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | DOM</title>
+    <style>
+        .error{
+            color: red;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Registration form</h1>
+        <form action="">
+            <label for="name">Enter Your name</label><br>
+            <input type="text" name="" id="name">
+            <p id="nameerror" class="error"></p><br>
+
+            <label for="surname">Enter last name</label><br>
+            <input type="text" id="surname">
+            <p id="surnameerror" class="error"></p><br>
+
+            <label for="email">Enter your email</label> <br>
+            <input type="text" name="" id="email">
+            <p id="emailerror" class="error"></p>
+
+            <p>Select Gender</p>
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label> <br><br>
+
+            <label for="course">Select your course</label>
+            <select name="" id="course">
+                <option value=""></option>
+                <option value="Btech">B.tech</option>
+                <option value="Bsc">B.sc</option>
+            </select> 
+            <p id="courseerror" class="error"></p><br>
+            <label for="password">Enter password</label> <br>
+            <input type="password" name="" id="password">
+            <p id="passworderror" class="error"></p>
+
+            <input type="submit" name="" id="submit">
+        
+        </form>
+</center>
+</body>
+<script>
+    let name = document.querySelector('#name');
+    name.addEventListener('keyup', function(){
+       let nameCheck = name.value;
+       if(nameCheck ==""){
+        document.querySelector('#nameerror').innerHTML = "Field is empty"
+       }
+       else if(/\d/.test(nameCheck)){
+        document.querySelector('#nameerror').innerHTML = "name Should not contain letters"
+       }
+       else{
+        document.querySelector('#nameerror').innerHTML = ""
+       }
+    })
+
+    let surName = document.querySelector('#surname');
+    surName.addEventListener('keyup', function(){
+       let lastNameCheck = surName.value;
+       if(lastNameCheck ==""){
+        document.querySelector('#surnameerror').innerHTML = "Field is empty"
+       }
+       else if(/\d/.test(lastNameCheck)){
+        document.querySelector('#surnameerror').innerHTML = "Suname Should not contain letters"
+       }
+       else{
+        document.querySelector('#surnameerror').innerHTML = ""
+       }
+    })
+
+
+    let email = document.querySelector('#email');
+    email.addEventListener('keyup', function(){
+       let emailCheck = email.value;
+       if(emailCheck ==""){
+        document.querySelector('#emailerror').innerHTML = "Field is empty"
+       }
+       else if(emailCheck.indexOf('@gmail.com') ==-1){
+        document.querySelector('#emailerror').innerHTML = "invalid email address"
+       }
+       else{
+        document.querySelector('#emailerror').innerHTML = ""
+       }
+    })
+
+    let course = document.querySelector('#course');
+    course.addEventListener('change', function(){
+       let courseCheck = course.value;
+       console.log(courseCheck)
+       if(courseCheck ==""){
+        document.querySelector('#courseerror').innerHTML = "Please select at least one course"
+       }
+       else{
+        document.querySelector('#courseerror').innerHTML = ""
+       }
+    })
+
+
+    let password = document.querySelector('#password');
+    password.addEventListener('keyup', function(){
+       let passwordCheck = password.value;
+       console.log(passwordCheck)
+       if(passwordCheck ==""){
+        document.querySelector('#passworderror').innerHTML = "Password Field is empty"
+       }
+       else if(passwordCheck.length < 8){
+        document.querySelector('#passworderror').innerHTML = "Password length should be greater than 8"
+       }
+       else{
+        document.querySelector('#passworderror').innerHTML = ""
+       }
+    })
+
+</script>
+</html>

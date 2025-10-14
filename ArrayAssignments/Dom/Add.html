@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 10px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+            <input type="number"  id="first" onkeyup="addNumber()"> <br><br><br>
+            <input type="number"  id="second" onkeyup="addNumber()"> <br><br><br>
+            <input type="number"  id="third" onkeyup="addNumber()"> <br><br><br>
+
+            <h1 id="result"></h1>
+    </center>
+
+    <script>
+        function addNumber(){
+            let firstNum = document.getElementById('first').value*1;
+            let secondNum = document.getElementById('second').value*1;
+            let thirdNum = document.getElementById('third').value*1;
+            
+
+            document.getElementById('result').innerHTML = firstNum+secondNum+thirdNum;
+        }
+    </script>
+</body>
+</html>

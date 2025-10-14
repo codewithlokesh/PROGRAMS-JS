@@ -1,0 +1,18 @@
+<script>
+    let arr = [4 ,2 ,-3, 1, 6];
+    document.write("arr  ",arr)
+    let n = arr.length
+    let zeroSumIndexes = [];
+    for(let i=0; i<n; i++){
+        let sum = arr[i];
+        for(let j=i+1; j<n; j++){
+            sum = sum+arr[j];
+           
+            if(sum==0){
+                zeroSumIndexes.push(i,j);
+                document.write(" <br>Sum is 0 found")
+            }
+        }
+    }
+    document.write("<br>",zeroSumIndexes)
+</script>
