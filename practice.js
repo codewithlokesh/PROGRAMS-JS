@@ -1,16 +1,21 @@
-function findMissingNumberBySorting(arr) {
-  arr.sort((a, b) => a - b); // Sort in ascending order
+function longestSubstring(str) {
+  let longest = 0;
+  let current
+  for (let i = 0; i < str.length; i++) {
+     current = "";
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== i + 1) {
-      return i + 1; // The missing number is found
+    for (let j = i; j < str.length; j++) {
+      if (current.includes(str[j])) {
+        break; // stop if repeating character found
+      }
+      current += str[j]; // build substring
     }
+    longest = Math.max(longest, current.length);
   }
-  // If no number is missing within the current range, 
-  // the missing number is the next in sequence
-  return arr.length + 1; 
+
+  return longest+ ", "+current;
 }
 
-const numbers = [1, 2, 3,4, 5, 6];
-const missing = findMissingNumberBySorting(numbers);
-console.log(`The missing number is: ${missing}`); // Output: The missing number is: 4
+console.log(longestSubstring("abcabcbb")); // 3
+console.log(longestSubstring("bbbbb"));    // 1
+console.log(longestSubstring("pwwkew"));   // 3

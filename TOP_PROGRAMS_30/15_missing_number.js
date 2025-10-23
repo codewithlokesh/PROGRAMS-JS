@@ -50,3 +50,20 @@ function findMissingNumberBySorting(arr) {
 const numbers = [1, 2, 3, 5, 6];
 const missing = findMissingNumberBySorting(numbers);
 console.log(`The missing number is: ${missing}`);
+
+
+//------------------------best one ---------------------------------
+function findMissingNumber(arr, n) {
+    let total = 0;
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        total += i;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return total - sum;
+}
+
+console.log(findMissingNumber([1, 2, 4, 5, 6], 6)); // 3
+console.log(findMissingNumber([2, 3, 1, 5], 5));   // 4
